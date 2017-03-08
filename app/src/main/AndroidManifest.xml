@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.bitsound.android.sample">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:name=".App">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- BitsoundSmartOn throws action -->
+        <receiver android:name=".receivers.BitsoundSmartOnReceiver"
+                  android:exported="false">
+            <intent-filter>
+                <!-- Action must be your.application.package.ACTION_BITSOUND_SMARTON -->
+                <action android:name="io.bitsound.apitestapp.ACTION_BITSOUND_SMARTON" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Bitsound APP KEY -->
+        <meta-data
+            android:name="io.bitsound.AppKey"
+            android:value="INSERT_YOUR_APP_KEY_FROM_PORTAL" />
+    </application>
+
+</manifest>

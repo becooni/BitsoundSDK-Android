@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:keepScreenOn="true">
+
+    <LinearLayout
+        android:id="@+id/dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/unit_1x"
+        android:orientation="vertical"
+        android:padding="@dimen/unit_1x">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/unit_5x">
+
+            <TextView
+                android:id="@+id/bitsound.label"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/unit_1x"
+                android:layout_marginStart="@dimen/unit_1x"
+                android:layout_toLeftOf="@+id/bitsound.check_and_init"
+                android:layout_toStartOf="@+id/bitsound.check_and_init"
+                android:gravity="bottom"
+                android:paddingBottom="@dimen/unit_0.75x"
+                android:text="@string/bitsound.label"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:id="@+id/bitsound.check_and_init"
+                android:layout_width="@dimen/unit_5x"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_toLeftOf="@+id/bitsound.init"
+                android:layout_toStartOf="@+id/bitsound.init"
+                android:clickable="true"
+                android:contentDescription="@string/bitsound.check_and_init"
+                android:focusable="true"
+                android:padding="@dimen/unit_1x"/>
+
+            <ImageView
+                android:id="@+id/bitsound.init"
+                android:layout_width="@dimen/unit_5x"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_toLeftOf="@+id/bitsound.release"
+                android:layout_toStartOf="@+id/bitsound.release"
+                android:clickable="true"
+                android:contentDescription="@string/bitsound.init"
+                android:focusable="true"
+                android:padding="@dimen/unit_1x"/>
+
+            <ImageView
+                android:id="@+id/bitsound.release"
+                android:layout_width="@dimen/unit_5x"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:contentDescription="@string/bitsound.release"
+                android:focusable="true"
+                android:padding="@dimen/unit_1x"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/unit_5x">
+
+            <TextView
+                android:id="@+id/bitsound.receiver.label"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/unit_1x"
+                android:layout_marginStart="@dimen/unit_1x"
+                android:layout_toLeftOf="@+id/bitsound.receiver.start"
+                android:layout_toStartOf="@+id/bitsound.receiver.start"
+                android:gravity="bottom"
+                android:paddingBottom="@dimen/unit_0.75x"
+                android:text="@string/bitsound.receiver.label"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:id="@+id/bitsound.receiver.start"
+                android:layout_width="@dimen/unit_5x"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_toLeftOf="@+id/bitsound.receiver.stop"
+                android:layout_toStartOf="@+id/bitsound.receiver.stop"
+                android:clickable="true"
+                android:contentDescription="@string/bitsound.receiver.start"
+                android:focusable="true"
+                android:padding="@dimen/unit_1x"/>
+
+            <ImageView
+                android:id="@+id/bitsound.receiver.stop"
+                android:layout_width="@dimen/unit_5x"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:contentDescription="@string/bitsound.receiver.stop"
+                android:focusable="true"
+                android:padding="@dimen/unit_1x"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/unit_5x">
+
+            <TextView
+                android:id="@+id/bitsound.shaking.label"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/unit_1x"
+                android:layout_marginStart="@dimen/unit_1x"
+                android:layout_toLeftOf="@+id/bitsound.shaking.enable"
+                android:layout_toStartOf="@+id/bitsound.shaking.enable"
+                android:gravity="bottom"
+                android:paddingBottom="@dimen/unit_0.75x"
+                android:text="@string/bitsound.shaking.label"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:id="@+id/bitsound.shaking.enable"
+                android:layout_width="@dimen/unit_5x"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_toLeftOf="@+id/bitsound.shaking.disable"
+                android:layout_toStartOf="@+id/bitsound.shaking.disable"
+                android:clickable="true"
+                android:contentDescription="@string/bitsound.shaking.enable"
+                android:focusable="true"
+                android:padding="@dimen/unit_1x"/>
+
+            <ImageView
+                android:id="@+id/bitsound.shaking.disable"
+                android:layout_width="@dimen/unit_5x"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:contentDescription="@string/bitsound.shaking.disable"
+                android:focusable="true"
+                android:padding="@dimen/unit_1x"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/unit_5x">
+
+            <TextView
+                android:id="@+id/bitsound.smarton.label"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/unit_1x"
+                android:layout_marginStart="@dimen/unit_1x"
+                android:layout_toLeftOf="@+id/bitsound.smarton.start"
+                android:layout_toStartOf="@+id/bitsound.smarton.stop"
+                android:gravity="bottom"
+                android:paddingBottom="@dimen/unit_0.75x"
+                android:text="@string/bitsound.smarton.label"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:id="@+id/bitsound.smarton.start"
+                android:layout_width="@dimen/unit_5x"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_toLeftOf="@+id/bitsound.smarton.stop"
+                android:layout_toStartOf="@+id/bitsound.smarton.stop"
+                android:clickable="true"
+                android:contentDescription="@string/bitsound.smarton.start"
+                android:focusable="true"
+                android:padding="@dimen/unit_1x"/>
+
+            <ImageView
+                android:id="@+id/bitsound.smarton.stop"
+                android:layout_width="@dimen/unit_5x"
+                android:layout_height="@dimen/unit_5x"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:contentDescription="@string/bitsound.smarton.stop"
+                android:focusable="true"
+                android:padding="@dimen/unit_1x"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/text_logger"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

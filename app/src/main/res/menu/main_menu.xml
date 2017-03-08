@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu.clear_text_log"
+        android:title="@string/menu.clear_text_log"
+        android:icon="@drawable/ic_delete_sweep_white_24dp"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/menu.mic_permission"
+        android:title="@string/menu.mic_permission"
+        android:icon="@drawable/ic_mic_white_24dp"
+        app:showAsAction="ifRoom"/>
+</menu>

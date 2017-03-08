@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">BitsoundAndroidSample</string>
+
+    <!-- Bitsound -->
+    <string name="bitsound.label">Bitsound</string>
+    <string name="bitsound.check_and_init">Bitsound::checkAndInit</string>
+    <string name="bitsound.init">Bitsound::init</string>
+    <string name="bitsound.release">Bitsound::release</string>
+
+    <!-- BitsoundReceiver -->
+    <string name="bitsound.receiver.label">BitsoundReceiver</string>
+    <string name="bitsound.receiver.start">BitsoundReceiver::startDetection</string>
+    <string name="bitsound.receiver.stop">BitsoundReceiver::stopDetection</string>
+
+    <!-- BitsoundShaking -->
+    <string name="bitsound.shaking.label">BitsoundShaking</string>
+    <string name="bitsound.shaking.enable">BitsoundShaking::enable</string>
+    <string name="bitsound.shaking.disable">BitsoundShaking::disable</string>
+
+    <!-- BitsoundSmartOn -->
+    <string name="bitsound.smarton.label">BitsoundSmartOn</string>
+    <string name="bitsound.smarton.start">BitsoundSmartOn::start</string>
+    <string name="bitsound.smarton.stop">BitsoundSmartOn::stop</string>
+
+
+    <!-- Menu -->
+    <string name="menu.clear_text_log">Clear Text Log</string>
+    <string name="menu.mic_permission">Request Mic Permission</string>
+
+    <!-- Toolbar -->
+    <string name="toolbar.bitsound.not_initialized">Not Initialized</string>
+    <string name="toolbar.bitsound.initialized">Initialized</string>
+    <string name="toolbar.bitsound.released">Released</string>
+
+    <!-- Permission -->
+    <string name="permission.mic.granted">Mic Permission Granted</string>
+    <string name="permission.mic.denied">Mic Permission Denied</string>
+
+</resources>
