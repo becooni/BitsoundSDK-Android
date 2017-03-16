@@ -1,20 +1,37 @@
 # BitsoundSDK-Android
 
-Binary Archive for BitsoundAndroidSDK Release. We are going to introduce `jCenter` distribution in near future!  
-Product of [Soundl.ly](http://bitsound.io/). You can make your campaign with related appkey in [Portal](https://portal.soundl.ly/login.html#/)
+![version](https://img.shields.io/badge/version-3.0.9-green.svg?style=flat-square)
+![dependency](https://img.shields.io/badge/appcompat--v7-25.1.0-red.svg?style=flat-square)
+![dependency](https://img.shields.io/badge/play--services--base-10.0.1-red.svg?style=flat-square)
+![dependency](https://img.shields.io/badge/play--services--ads-10.0.1-red.svg?style=flat-square)
 
-### Latest Release : v3.0.8 (Updated at 2017/03/08)
+BitsoundAndroidSDK Archive. We will distribute through **jCenter** in near future! You can make your campaign with related appkey in [Portal](https://portal.soundl.ly/login.html#/). **Dependencies** are stated above with red [shield](http://shields.io/)
 
-#### Document
+### Latest Release : v3.0.9 (Updated at 2017/03/16)
 
-Docs will be updated to this README as well when we are ready!
+#### Changes
+
+- **Bitsound.init** verification runs **Every 10 minutes**
+- Updates Schedule on **Every 10 minutes**
+
+### Previous Release : v3.0.8 (Updated at 2017/03/08)
+
+#### Modules
+
+- **BitsoundReceiver** : Foreground Receiver Module
+- **BitsoundShaking**  : Shaking Motion Detector Module
+- **BitsoundSmartOn** : Background Receiver Module for Client Service
+
+---
+
+### Documents
 
 - [Introduction](https://docs.bitsound.io/v1.0/docs/introduction)
-- [Quick Start Guide](https://docs.bitsound.io/v1.0/docs/quick-start-guide)
+- [Getting Started](https://docs.bitsound.io/v1.0/docs/getting-started)
 - [Android SDK Setup](https://docs.bitsound.io/v1.0/docs/android-sdk-setup)
 - [Android SDK API Reference](https://docs.bitsound.io/v1.0/docs/android-sdk)
 
-#### Support Criteria
+#### Supported Features
 
 **Type**|**Criteria**
 :-----:|:-----:
