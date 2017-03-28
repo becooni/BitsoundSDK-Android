@@ -1,23 +1,29 @@
 # BitsoundSDK-Android
 
-![version](https://img.shields.io/badge/version-3.0.10-green.svg?style=flat-square)
-![dependency](https://img.shields.io/badge/appcompat--v7-25.1.0-red.svg?style=flat-square)
-![dependency](https://img.shields.io/badge/play--services--base-10.0.1-red.svg?style=flat-square)
-![dependency](https://img.shields.io/badge/play--services--ads-10.0.1-red.svg?style=flat-square)
+[![version](https://img.shields.io/badge/version-3.0.11-green.svg?style=flat-square)](#)
+[![dependency](https://img.shields.io/badge/appcompat--v7-25.1.0-red.svg?style=flat-square)](#)
+[![dependency](https://img.shields.io/badge/play--services--base-10.0.1-red.svg?style=flat-square)](#)
+[![dependency](https://img.shields.io/badge/play--services--ads-10.0.1-red.svg?style=flat-square)](#)
 
 BitsoundAndroidSDK Archive. We will distribute through **jCenter** in near future! You can make your campaign with related appkey in [Portal](https://portal.soundl.ly/login.html#/). **Dependencies** are stated above with red [shield](http://shields.io/)
 
-### Latest Release : v3.0.10 (Updated at 2017/03/20)
+### Latest Release
 
-#### Changes
+#### v3.0.11 (Updated at 2017/03/28)
+
+- Core Parameter Update for FrameTypeZero Signal
+
+---
+
+### Previous Release
+
+#### v3.0.10 (Updated at 2017/03/20)
 
 - Synchronized **Local ScheduleFile Version** against Server
 - Synchronized **Initialization Process**
 
 
-### Latest Release : v3.0.9 (Updated at 2017/03/16)
-
-#### Changes
+#### v3.0.9 (Updated at 2017/03/16)
 
 - **Bitsound.init** verification runs **Every 10 minutes**
 - Updates Schedule on **Every 10 minutes**
@@ -31,7 +37,7 @@ BitsoundAndroidSDK Archive. We will distribute through **jCenter** in near futur
 - [Android SDK Setup](https://docs.bitsound.io/v1.0/docs/android-sdk-setup)
 - [Android SDK API Reference](https://docs.bitsound.io/v1.0/docs/android-sdk)
 
-#### Supported Features
+### Supported Features
 
 **Type**|**Criteria**
 :-----:|:-----:
