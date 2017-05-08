@@ -49,7 +49,7 @@ public class TextLogData {
     }
 
     public String getText() {
-        return mTextIndent + mText;
+        return mTextIndent + mText.replace("\n", "\n" + mTextIndent);
     }
 
     public int getTextColor() {

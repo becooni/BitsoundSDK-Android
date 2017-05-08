@@ -6,6 +6,10 @@
 .idea/inspectionProfiles/
 .idea/file.template.settings.xml
 .idea/kotlinc.xml
+## Markdown Plugin
+.idea/markdown-exported-files.xml
+.idea/markdown-navigator.xml
+.idea/markdown-navigator/profiles_settings.xml
 
 # Auto-generated file stub
 gradle/wrapper/gradle-wrapper.properties

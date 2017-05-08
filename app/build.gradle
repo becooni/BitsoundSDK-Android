@@ -34,17 +34,17 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     /* Android Support */
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.android.support:recyclerview-v7:25.2.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
 
     /* Google */
-    compile 'com.google.android.gms:play-services-base:10.2.0'
-    compile 'com.google.android.gms:play-services-ads:10.2.0'
+    compile 'com.google.android.gms:play-services-base:10.2.4'
+    compile 'com.google.android.gms:play-services-ads:10.2.4'
 
     /* Bitsound */
-    compile (name: 'bitsoundreceiver-release-v3.0.11', ext:'aar')
-    compile (name: 'bitsoundshaking-release-v3.0.11', ext:'aar')
-    compile (name: 'bitsoundsmarton-release-v3.0.11', ext:'aar')
+    compile (name: 'io.bitsound:receiver:v3.1.0', ext:'aar')
+    compile (name: 'io.bitsound:shaking:v3.1.0', ext:'aar')
+    compile (name: 'io.bitsound:smarton:v3.1.0', ext:'aar')
 
     /* Utility */
     compile 'com.jakewharton.timber:timber:4.5.0'

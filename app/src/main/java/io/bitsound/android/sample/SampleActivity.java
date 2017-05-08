@@ -14,7 +14,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -39,18 +38,18 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.bitsound.android.sample.logging.TextLogAdapter;
 import io.bitsound.android.sample.logging.TextLogData;
-import io.bitsound.android.sample.utils.Stringify;
 import io.bitsound.receiver.Bitsound;
 import io.bitsound.receiver.BitsoundContents;
 import io.bitsound.receiver.BitsoundContentsListener;
 import io.bitsound.receiver.common.Constant;
+import io.bitsound.receiver.common.Stringify;
 import io.bitsound.shaking.BitsoundShaking;
 import io.bitsound.smarton.BitsoundSmartOn;
 import jp.wasabeef.picasso.transformations.ColorFilterTransformation;
 import timber.log.Timber;
 
 
-public class MainActivity extends AppCompatActivity {
+public class SampleActivity extends AppCompatActivity {
 
     /* For Local Broadcasting */
     public static final String ACTION_RECEIVE_BITSOUND_CONTENTS = "io.bitsound.intent.action.RECEIVE_BITSOUND_CONTENTS";
@@ -95,53 +94,43 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
+
     private BroadcastReceiver mBitsoundContentsReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            Timber.d("---> Received %s", intent);
             if (!ACTION_RECEIVE_BITSOUND_CONTENTS.equals(intent.getAction())) return;
 
-            final int resultCode = intent.getIntExtra(BitsoundSmartOn.EXTRA_BITSOUND_SMARTON_CONTENTS_RESULT_CODE, BitsoundContents.Result.SIGNAL_NOT_FOUND);
-            final int sequence = intent.getIntExtra(BitsoundSmartOn.EXTRA_BITSOUND_SMARTON_CONTENTS_SEQUENCE, 0);
-            final String name = intent.getStringExtra(BitsoundSmartOn.EXTRA_BITSOUND_SMARTON_CONTENTS_NAME);
-            final String comment = intent.getStringExtra(BitsoundSmartOn.EXTRA_BITSOUND_SMARTON_CONTENTS_COMMENT);
-            final String url = intent.getStringExtra(BitsoundSmartOn.EXTRA_BITSOUND_SMARTON_CONTENTS_URL);
+            final int code = intent.getIntExtra(BitsoundSmartOn.EXTRA_BITSOUND_SMARTON_CONTENTS_RESULT_CODE, BitsoundContents.Result.SIGNAL_NOT_FOUND);
+            final BitsoundContents contents = BitsoundContents.fromBytes(intent.getByteArrayExtra(BitsoundSmartOn.EXTRA_BITSOUND_SMARTON_CONTENTS_BYTES));
+            Timber.d("---> %s %s", Stringify.contents(code), contents);
 
-            String message = String.format(Locale.getDefault(), "[%s]", Stringify.contentsResult(resultCode));
-            if (resultCode == BitsoundContents.Result.SUCCESS) {
-                message = String.format(Locale.getDefault(), "%s\n    name:%s\n    comment:%s\n    url:%s\n    sequence:%d", message, name, comment, url, sequence);
-            }
-            MainActivity.this.textLogging("[onResult] %s", message);
+            // Reuse BitsoundContentsListener::onResult
+            mBitsoundContentsListener.onResult(code, contents);
         }
     };
+
     private BitsoundContentsListener mBitsoundContentsListener = new BitsoundContentsListener() {
         @Override
         public void onInitialized() {
-            MainActivity.this.textLogging("[onInitialized] BitsoundInit Success!!");
+            SampleActivity.this.textLogging("[onInitialized] BitsoundInit Success!!");
             if (mActionBar!= null) mActionBar.setTitle(String.format("%s : %s", Build.MODEL, App.string(R.string.toolbar_bitsound_initialized)));
         }
         @Override
         public void onError(int errorCode) {
-            MainActivity.this.textLogging("[onError] %s", Stringify.contentsError(errorCode));
+            SampleActivity.this.textLogging("[onError] %s", Stringify.contents(errorCode));
         }
         @Override
         public void onStateChanged(int stateCode) {
             if (stateCode == BitsoundContents.State.STOPPED) {
-                MainActivity.this.textLogging("[onStateChanged][%dms] %s", (System.currentTimeMillis() - mStartTime), Stringify.contentsState(stateCode));
-            } else MainActivity.this.textLogging("[onStateChanged] %s", Stringify.contentsState(stateCode));
+                SampleActivity.this.textLogging("[onStateChanged][%dms] %s", (System.currentTimeMillis() - mStartTime), Stringify.contents(stateCode));
+            } else SampleActivity.this.textLogging("[onStateChanged] %s", Stringify.contents(stateCode));
         }
         @Override
         public void onResult(int resultCode, BitsoundContents contents) {
-            String message = String.format(Locale.getDefault(), "[%dms][%s]", System.currentTimeMillis() - mStartTime, Stringify.contentsResult(resultCode));
-            if (resultCode == BitsoundContents.Result.SUCCESS && contents != null) {
-                message = String.format(Locale.getDefault(), "%s\n    name:%s\n    comment:%s\n    url:%s\n    sequence:%d",
-                    message,
-                    contents.getName(),
-                    contents.getComment(),
-                    contents.getUrl(),
-                    contents.getSequence()
-                );
-            }
-            MainActivity.this.textLogging("[onResult] %s", message);
+            String message = String.format(Locale.getDefault(), "[%dms][%s]", System.currentTimeMillis() - mStartTime, Stringify.contents(resultCode));
+            if (resultCode == BitsoundContents.Result.SUCCESS && contents != null) message += "\n" + contents;
+            SampleActivity.this.textLogging("[onResult] %s", message);
         }
     };
 
@@ -149,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(MainActivity.this);
+        ButterKnife.bind(SampleActivity.this);
 
         /* Setup ActionBar */
         mActionBar = this.getSupportActionBar();
@@ -174,12 +163,12 @@ public class MainActivity extends AppCompatActivity {
         initializeBitsoundSmartOnDashboard();
 
         /* Register Broadcast Receiver */
-        LocalBroadcastManager.getInstance(this).registerReceiver(mBitsoundContentsReceiver, new IntentFilter(ACTION_RECEIVE_BITSOUND_CONTENTS));
+        this.registerReceiver(mBitsoundContentsReceiver, new IntentFilter(ACTION_RECEIVE_BITSOUND_CONTENTS));
     }
 
     @Override
     protected void onDestroy() {
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(mBitsoundContentsReceiver);
+        this.unregisterReceiver(mBitsoundContentsReceiver);
         super.onDestroy();
     }
 
@@ -195,13 +184,13 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.bitsound_check_and_init)
     protected void onBitsoundCheckAndInit() {
         this.textLoggingBold(R.string.bitsound_check_and_init);
-        int result = Bitsound.checkAndInit(MainActivity.this.getApplication(), mBitsoundContentsListener);
+        int result = Bitsound.checkAndInit(SampleActivity.this.getApplication(), mBitsoundContentsListener);
         this.textLogging(Stringify.result(result));
     }
     @OnClick(R.id.bitsound_init)
     protected void onBitsoundInit() {
         this.textLoggingBold(R.string.bitsound_init);
-        int result = Bitsound.init(MainActivity.this.getApplication(), mBitsoundContentsListener);
+        int result = Bitsound.init(SampleActivity.this.getApplication(), mBitsoundContentsListener);
         this.textLogging(Stringify.result(result));
     }
     @OnClick(R.id.bitsound_release)
@@ -246,12 +235,12 @@ public class MainActivity extends AppCompatActivity {
     private BitsoundShaking.OnShakeListener mBitsoundShakingListener = new BitsoundShaking.OnShakeListener() {
         @Override
         public void onShake() {
-            Vibrator vibrator = (Vibrator) MainActivity.this.getSystemService(VIBRATOR_SERVICE);
+            Vibrator vibrator = (Vibrator) SampleActivity.this.getSystemService(VIBRATOR_SERVICE);
             vibrator.vibrate(VIBRATE_IN_MILLISECONDS);
-            MainActivity.this.textLogging("onShake Callback : Shake Detected");
+            SampleActivity.this.textLogging("onShake Callback : Shake Detected");
 
             int detectResult = handleStartDetect(true);
-            MainActivity.this.textLogging("onShake Callback : Start Listening %s", Stringify.result(detectResult));
+            SampleActivity.this.textLogging("onShake Callback : Start Listening %s", Stringify.result(detectResult));
         }
     };
     private void initializeBitsoundShakingDashboard() {

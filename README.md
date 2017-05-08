@@ -1,21 +1,36 @@
 # BitsoundSDK-Android
 
 [![version](https://img.shields.io/badge/version-3.0.11-green.svg?style=flat-square)](#)
-[![dependency](https://img.shields.io/badge/appcompat--v7-25.1.0-red.svg?style=flat-square)](#)
-[![dependency](https://img.shields.io/badge/play--services--base-10.0.1-red.svg?style=flat-square)](#)
-[![dependency](https://img.shields.io/badge/play--services--ads-10.0.1-red.svg?style=flat-square)](#)
+[![dependency](https://img.shields.io/badge/support--annotations-25.3.1-red.svg?style=flat-square)](#)
 
 BitsoundAndroidSDK Archive. We will distribute through **jCenter** in near future! You can make your campaign with related appkey in [Portal](https://portal.soundl.ly/login.html#/). **Dependencies** are stated above with red [shield](http://shields.io/)
 
 ### Latest Release
 
-#### v3.0.11 (Updated at 2017/03/28)
+#### v3.1.0 (Updated at 2017/05/08)
 
-- Core Parameter Update for FrameTypeZero Signal
+Changes
+
+- Dependency Reduction (removed following dependencies)  
+[![dependency](https://img.shields.io/badge/appcompat--v7-25.1.0-red.svg?style=flat-square)](#)
+[![dependency](https://img.shields.io/badge/play--services--base-10.0.1-red.svg?style=flat-square)](#)
+[![dependency](https://img.shields.io/badge/play--services--ads-10.0.1-red.svg?style=flat-square)](#)
+- Stable Alarm Scheduling
+- Stable Network Access including less Data Usage
+- Stable Log for Statistics
+- Stable Audio Recording free from AudioEffect native crash
+- Support Log Tagging API instead of repeated customlog calls
+- Support FrameTypeFour Sound Beacon
+- Support BitsoundContents from Bytes in BitsoundSmartOn Receiver
+- Support Stringify class for code values in string
 
 ---
 
 ### Previous Release
+
+#### v3.0.11 (Updated at 2017/03/28)
+
+- Core Parameter Update for FrameTypeZero Signal
 
 #### v3.0.10 (Updated at 2017/03/20)
 

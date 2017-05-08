@@ -1,17 +1,15 @@
-package io.bitsound.android.sample.utils;
+package io.bitsound.android.sample;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import java.util.Map;
 
-import io.bitsound.android.sample.App;
 
-
-public class Storage {
+public class AppStorage {
 
     /* Internal Methods */
-    private Storage(Context context) {
+    private AppStorage(Context context) {
 
     }
     private static SharedPreferences local() {
@@ -21,65 +19,65 @@ public class Storage {
 
     /* SharedPreference Method Mapping */
     public static boolean contains(String key) {
-        return Storage.local().contains(key);
+        return AppStorage.local().contains(key);
     }
     public static Map<String, ?> getAll() {
-        return Storage.local().getAll();
+        return AppStorage.local().getAll();
     }
     public static boolean getBoolean(String key) {
-        return Storage.getBoolean(key, false);
+        return AppStorage.getBoolean(key, false);
     }
     public static boolean getBoolean(String key, boolean fallback) {
-        return Storage.local().getBoolean(key, fallback);
+        return AppStorage.local().getBoolean(key, fallback);
     }
     public static float getFloat(String key) {
-        return Storage.getFloat(key, 0.0f);
+        return AppStorage.getFloat(key, 0.0f);
     }
     public static float getFloat(String key, float fallback) {
-        return Storage.local().getFloat(key, fallback);
+        return AppStorage.local().getFloat(key, fallback);
     }
     public static int getInt(String key) {
-        return Storage.getInt(key, 0);
+        return AppStorage.getInt(key, 0);
     }
     public static int getInt(String key, int fallback) {
-        return Storage.local().getInt(key, fallback);
+        return AppStorage.local().getInt(key, fallback);
     }
     public static long getLong(String key) {
-        return Storage.getLong(key, 0L);
+        return AppStorage.getLong(key, 0L);
     }
     public static long getLong(String key, long fallback) {
-        return Storage.local().getLong(key, fallback);
+        return AppStorage.local().getLong(key, fallback);
     }
     public static String getString(String key) {
-        return Storage.getString(key, "");
+        return AppStorage.getString(key, "");
     }
     public static String getString(String key, int fallback) {
-        return Storage.getString(key, App.string(fallback));
+        return AppStorage.getString(key, App.string(fallback));
     }
     public static String getString(String key, String fallback) {
-        return Storage.local().getString(key, fallback);
+        return AppStorage.local().getString(key, fallback);
     }
 
     /* SharedPreferences.Editor Method Mapping */
     public static void clear() {
-        Storage.local().edit().clear().apply();
+        AppStorage.local().edit().clear().apply();
     }
     public static void put(String key, boolean value) {
-        Storage.local().edit().putBoolean(key, value).apply();
+        AppStorage.local().edit().putBoolean(key, value).apply();
     }
     public static void put(String key, float value) {
-        Storage.local().edit().putFloat(key, value).apply();
+        AppStorage.local().edit().putFloat(key, value).apply();
     }
     public static void put(String key, int value) {
-        Storage.local().edit().putInt(key, value).apply();
+        AppStorage.local().edit().putInt(key, value).apply();
     }
     public static void put(String key, long value) {
-        Storage.local().edit().putLong(key, value).apply();
+        AppStorage.local().edit().putLong(key, value).apply();
     }
     public static void put(String key, String value) {
-        Storage.local().edit().putString(key, value).apply();
+        AppStorage.local().edit().putString(key, value).apply();
     }
     public static void remove(String key) {
-        Storage.local().edit().remove(key).apply();
+        AppStorage.local().edit().remove(key).apply();
     }
 }
