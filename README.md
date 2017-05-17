@@ -7,6 +7,19 @@ BitsoundAndroidSDK Archive. We will distribute through **jCenter** in near futur
 
 ### Latest Release
 
+#### v3.1.1 (Updated at 2017/05/17)
+
+BugFix
+
+- Fixed AlarmPoolSize was decreased rarely on **SAMSUNG Devices**
+- Fixed AlarmPoolSize was operating in one less number
+- Fixed AlarmScheduler's rare Exceptions with synchronization
+- Fixed Dispatching statistics delivered in proper time
+
+---
+
+### Previous Release
+
 #### v3.1.0 (Updated at 2017/05/08)
 
 Changes
@@ -23,10 +36,6 @@ Changes
 - Support FrameTypeFour Sound Beacon
 - Support BitsoundContents from Bytes in BitsoundSmartOn Receiver
 - Support Stringify class for code values in string
-
----
-
-### Previous Release
 
 #### v3.0.11 (Updated at 2017/03/28)
 
