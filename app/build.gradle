@@ -42,9 +42,9 @@ dependencies {
     compile 'com.google.android.gms:play-services-ads:10.2.4'
 
     /* Bitsound */
-    compile (name: 'io.bitsound:receiver:v3.1.1', ext:'aar')
-    compile (name: 'io.bitsound:shaking:v3.1.1', ext:'aar')
-    compile (name: 'io.bitsound:smarton:v3.1.1', ext:'aar')
+    compile (name: 'io.bitsound:receiver:v3.1.2', ext:'aar')
+    compile (name: 'io.bitsound:shaking:v3.1.2', ext:'aar')
+    compile (name: 'io.bitsound:smarton:v3.1.2', ext:'aar')
 
     /* Utility */
     compile 'com.jakewharton.timber:timber:4.5.0'

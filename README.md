@@ -7,6 +7,16 @@ BitsoundAndroidSDK Archive. We will distribute through **jCenter** in near futur
 
 ### Latest Release
 
+#### v3.1.2 (Updated at 2017/05/17)
+
+BugFix
+
+- Fixed Potential `NullPointException`
+
+---
+
+### Previous Release
+
 #### v3.1.1 (Updated at 2017/05/17)
 
 BugFix
@@ -15,10 +25,6 @@ BugFix
 - Fixed AlarmPoolSize was operating in one less number
 - Fixed AlarmScheduler's rare Exceptions with synchronization
 - Fixed Dispatching statistics delivered in proper time
-
----
-
-### Previous Release
 
 #### v3.1.0 (Updated at 2017/05/08)
 
