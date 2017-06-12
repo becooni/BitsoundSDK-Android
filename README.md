@@ -1,21 +1,30 @@
 # BitsoundSDK-Android
 
-[![version](https://img.shields.io/badge/version-3.0.11-green.svg?style=flat-square)](#)
+[![version](https://img.shields.io/badge/version-3.2.0-green.svg?style=flat-square)](#)
 [![dependency](https://img.shields.io/badge/support--annotations-25.3.1-red.svg?style=flat-square)](#)
 
 BitsoundAndroidSDK Archive. We will distribute through **jCenter** in near future! You can make your campaign with related appkey in [Portal](https://portal.soundl.ly/login.html#/). **Dependencies** are stated above with red [shield](http://shields.io/)
 
 ### Latest Release
 
+#### v3.2.0 (Updated at 2017/06/12)
+
+Changes
+
+- Decreased Logging Network Usage **down to 10%**
+- **Initialization Fails for Network Error** without Force Trigger Parameter
+- Always turn on PassiveMic Feature **(will be slowly deprecated)**
+- Use Explicit Intent to prepare **Android O**
+
+---
+
+### Previous Release
+
 #### v3.1.2 (Updated at 2017/05/17)
 
 BugFix
 
 - Fixed Potential `NullPointException`
-
----
-
-### Previous Release
 
 #### v3.1.1 (Updated at 2017/05/17)
 

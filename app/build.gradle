@@ -38,13 +38,13 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.3.1'
 
     /* Google */
-    compile 'com.google.android.gms:play-services-base:10.2.4'
-    compile 'com.google.android.gms:play-services-ads:10.2.4'
+    compile 'com.google.android.gms:play-services-base:11.0.0'
+    compile 'com.google.android.gms:play-services-ads:11.0.0'
 
     /* Bitsound */
-    compile (name: 'io.bitsound:receiver:v3.1.2', ext:'aar')
-    compile (name: 'io.bitsound:shaking:v3.1.2', ext:'aar')
-    compile (name: 'io.bitsound:smarton:v3.1.2', ext:'aar')
+    compile (name: 'io.bitsound.receiver-v3.2.0', ext:'aar')
+    compile (name: 'io.bitsound.shaking-v3.2.0', ext:'aar')
+    compile (name: 'io.bitsound.smarton-v3.2.0', ext:'aar')
 
     /* Utility */
     compile 'com.jakewharton.timber:timber:4.5.0'
