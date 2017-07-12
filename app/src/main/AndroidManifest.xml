@@ -26,7 +26,7 @@
                   android:exported="false">
             <intent-filter>
                 <!-- Action must be your.application.package.ACTION_BITSOUND_SMARTON -->
-                <action android:name="io.bitsound.apitestapp.ACTION_BITSOUND_SMARTON" />
+                <action android:name="io.bitsound.android.sample.ACTION_BITSOUND_SMARTON" />
             </intent-filter>
         </receiver>
 

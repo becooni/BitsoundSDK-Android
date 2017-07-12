@@ -7,6 +7,26 @@ BitsoundAndroidSDK Archive. We will distribute through **jCenter** in near futur
 
 ### Latest Release
 
+#### v3.2.2 (Updated at 2017/07/12)
+
+Changes
+
+- **More Controllable AlarmScheduler** with `offset` and `poolsize`
+
+BugFix
+
+- Fixed `NullPointException` rarely occured in some Lollipop Devices
+
+Sample App
+
+- Fixed Default BroadcastReceiver `android:name`
+- Update buildToolsVersion to `25.0.3`
+- Update play-services to `11.0.2`
+
+---
+
+### Previous Release
+
 #### v3.2.0 (Updated at 2017/06/12)
 
 Changes
@@ -15,10 +35,6 @@ Changes
 - **Initialization Fails for Network Error** without Force Trigger Parameter
 - Always turn on PassiveMic Feature **(will be slowly deprecated)**
 - Use Explicit Intent to prepare **Android O**
-
----
-
-### Previous Release
 
 #### v3.1.2 (Updated at 2017/05/17)
 
