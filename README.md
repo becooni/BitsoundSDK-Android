@@ -1,11 +1,46 @@
 # BitsoundSDK-Android
 
-[![version](https://img.shields.io/badge/version-3.2.0-green.svg?style=flat-square)](#)
-[![dependency](https://img.shields.io/badge/support--annotations-25.3.1-red.svg?style=flat-square)](#)
+[![version](https://img.shields.io/badge/Bitsound-3.3.0-green.svg?style=flat-square)](#)
+[![version](https://img.shields.io/badge/SoundllyPlayer-1.0.4-green.svg?style=flat-square)](#)
+[![dependency](https://img.shields.io/badge/support--annotations-26.0.1-red.svg?style=flat-square)](#)
 
-BitsoundAndroidSDK Archive. We will distribute through **jCenter** in near future! You can make your campaign with related appkey in [Portal](https://portal.soundl.ly/login.html#/). **Dependencies** are stated above with red [shield](http://shields.io/)
+BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCentral** in near future! You can make your campaign with related appkey in [Portal](https://portal.soundl.ly/login.html#/). **Dependencies** are stated above with red [shield](http://shields.io/)
 
 ### Latest Release
+
+#### v3.3.0 (Updated at 2017/08/21)
+
+Changes
+
+- Improved Alarm Stability
+- Improved Detection Accuracy
+- Supports `SAMSUNG Galaxy S8` `SAMSUNG Galaxy S8+` `LG G6` and more...
+- Following Features has been deprecated with `@Deprecated` Annotation :
+  - `Bitsound.getTags(Context)`
+  - `Bitsound.setTags(Context, JSONObject)`
+  - `Bitsound.hasTag(Context, String)`
+  - `Bitsound.removeTag(Context, String)`
+  - `Bitsound.addTag(Context, String, boolean)`
+  - `Bitsound.addTag(Context, String, double)`
+  - `Bitsound.addTag(Context, String, int)`
+  - `Bitsound.addTag(Context, String, long)`
+  - `Bitsound.addTag(Context, String, Object)`
+  - `Bitsound.setUUID(Context, String)`
+- `Bitsound.checkAndInit` is obsolete since `v3.3.0`
+
+BugFix
+
+  - Resolve Potential Exception in Threading
+  - Resolve Potential NPE
+
+Sample App
+
+- Update play-services to `11.0.4`
+- Include SoundllyPlayer Test Code in Sample Application
+
+---
+
+### Previous Release
 
 #### v3.2.2 (Updated at 2017/07/12)
 
@@ -22,10 +57,6 @@ Sample App
 - Fixed Default BroadcastReceiver `android:name`
 - Update buildToolsVersion to `25.0.3`
 - Update play-services to `11.0.2`
-
----
-
-### Previous Release
 
 #### v3.2.0 (Updated at 2017/06/12)
 
@@ -56,9 +87,9 @@ BugFix
 Changes
 
 - Dependency Reduction (removed following dependencies)  
-[![dependency](https://img.shields.io/badge/appcompat--v7-25.1.0-red.svg?style=flat-square)](#)
-[![dependency](https://img.shields.io/badge/play--services--base-10.0.1-red.svg?style=flat-square)](#)
-[![dependency](https://img.shields.io/badge/play--services--ads-10.0.1-red.svg?style=flat-square)](#)
+  [![dependency](https://img.shields.io/badge/appcompat--v7-25.1.0-red.svg?style=flat-square)](#)
+  [![dependency](https://img.shields.io/badge/play--services--base-10.0.1-red.svg?style=flat-square)](#)
+  [![dependency](https://img.shields.io/badge/play--services--ads-10.0.1-red.svg?style=flat-square)](#)
 - Stable Alarm Scheduling
 - Stable Network Access including less Data Usage
 - Stable Log for Statistics

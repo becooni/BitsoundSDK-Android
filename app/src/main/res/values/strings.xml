@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name">BitsoundAndroidSample</string>
+    <string name="app_name">BitsoundSample</string>
 
     <!-- Bitsound -->
     <string name="bitsound.label">Bitsound</string>
-    <string name="bitsound.check_and_init">Bitsound::checkAndInit</string>
     <string name="bitsound.init">Bitsound::init</string>
     <string name="bitsound.release">Bitsound::release</string>
 
@@ -22,6 +21,11 @@
     <string name="bitsound.smarton.start">BitsoundSmartOn::start</string>
     <string name="bitsound.smarton.stop">BitsoundSmartOn::stop</string>
 
+    <!-- Soundlly Player -->
+    <string name="soundlly.player.label">SoundllyPlayer</string>
+    <string name="soundlly.player.beacon">Beacon ID</string>
+    <string name="soundlly.player.start">SoundllyPlayer::start</string>
+    <string name="soundlly.player.stop">SoundllyPlayer::stop</string>
 
     <!-- Menu -->
     <string name="menu.clear_text_log">Clear Text Log</string>

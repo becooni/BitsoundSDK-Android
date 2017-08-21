@@ -33,7 +33,7 @@
         <!-- Bitsound APP KEY -->
         <meta-data
             android:name="io.bitsound.AppKey"
-            android:value="INSERT_YOUR_APP_KEY_FROM_PORTAL" />
+            android:value="75d97ae5-0e2d-4322-82cd-9770d129cd04" />
     </application>
 
 </manifest>

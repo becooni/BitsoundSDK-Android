@@ -24,8 +24,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.soundlly.soundllyplayer.SoundllyPlayer;
+import com.soundlly.soundllyplayer.SoundllyPlayerResultListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -57,7 +60,6 @@ public class SampleActivity extends AppCompatActivity {
     /* For Requesting Mic Permission */
     private static final int REQUEST_CODE_RECORD_AUDIO = 3;
 
-    @BindView(R.id.bitsound_check_and_init) protected ImageView mBitsoundCheckAndInit;
     @BindView(R.id.bitsound_init) protected ImageView mBitsoundInit;
     @BindView(R.id.bitsound_release) protected ImageView mBitsoundRelease;
     @BindView(R.id.bitsound_receiver_start) protected ImageView mBitsoundStartDetection;
@@ -66,6 +68,9 @@ public class SampleActivity extends AppCompatActivity {
     @BindView(R.id.bitsound_shaking_disable) protected ImageView mBitsoundShakingDisable;
     @BindView(R.id.bitsound_smarton_start) protected ImageView mBitsoundSmartOnStartScheduledDetection;
     @BindView(R.id.bitsound_smarton_stop) protected ImageView mBitsoundSmartOnStopScheduledDetection;
+    @BindView(R.id.soundlly_player_beacon) protected EditText mSoundllyPlayerBeacon;
+    @BindView(R.id.soundlly_player_start) protected ImageView mSoundllyPlayerStart;
+    @BindView(R.id.soundlly_player_stop) protected ImageView mSoundllyPlayerStop;
 
     @BindView(R.id.text_logger) protected RecyclerView mTextLogger;
 
@@ -161,6 +166,7 @@ public class SampleActivity extends AppCompatActivity {
         initializeBitsoundReceiverDashboard();
         initializeBitsoundShakingDashboard();
         initializeBitsoundSmartOnDashboard();
+        initializeSoundllyPlayerDashboard();
 
         /* Register Broadcast Receiver */
         this.registerReceiver(mBitsoundContentsReceiver, new IntentFilter(ACTION_RECEIVE_BITSOUND_CONTENTS));
@@ -174,18 +180,10 @@ public class SampleActivity extends AppCompatActivity {
 
     /* Bitsound Dashboard Listeners */
     private void initializeBitsoundDashboard() {
-        mBitsoundCheckAndInit.setOnTouchListener(ALPHA_EFFECT);
         mBitsoundInit.setOnTouchListener(ALPHA_EFFECT);
         mBitsoundRelease.setOnTouchListener(ALPHA_EFFECT);
-        Picasso.with(this).load(R.drawable.ic_check_white_24dp).transform(new ColorFilterTransformation(GREY)).into(mBitsoundCheckAndInit);
         Picasso.with(this).load(R.drawable.ic_play_arrow_white_24dp).transform(new ColorFilterTransformation(GREEN)).into(mBitsoundInit);
         Picasso.with(this).load(R.drawable.ic_pause_white_24dp).transform(new ColorFilterTransformation(RED)).into(mBitsoundRelease);
-    }
-    @OnClick(R.id.bitsound_check_and_init)
-    protected void onBitsoundCheckAndInit() {
-        this.textLoggingBold(R.string.bitsound_check_and_init);
-        int result = Bitsound.checkAndInit(SampleActivity.this.getApplication(), mBitsoundContentsListener);
-        this.textLogging(Stringify.result(result));
     }
     @OnClick(R.id.bitsound_init)
     protected void onBitsoundInit() {
@@ -280,6 +278,91 @@ public class SampleActivity extends AppCompatActivity {
         this.textLoggingBold(R.string.bitsound_smarton_stop);
         int result = BitsoundSmartOn.stopScheduledDetection(this);
         this.textLogging("Result : %s", Stringify.result(result));
+    }
+
+    /* SoundllyPlayer Dashboard Listeners */
+    private static final String SOUNDLLY_APP_KEY = "75d97ae5-0e2d-4322-82cd-9770d129cd04"; // Same with Bitsound AppKey in AndroidManifest.xml
+    private SoundllyPlayerResultListener mPlayerListener;
+    private void initializeSoundllyPlayerDashboard() {
+        mSoundllyPlayerStart.setOnTouchListener(ALPHA_EFFECT);
+        mSoundllyPlayerStop.setOnTouchListener(ALPHA_EFFECT);
+        Picasso.with(this).load(R.drawable.ic_play_arrow_white_24dp).transform(new ColorFilterTransformation(GREEN)).into(mSoundllyPlayerStart);
+        Picasso.with(this).load(R.drawable.ic_pause_white_24dp).transform(new ColorFilterTransformation(RED)).into(mSoundllyPlayerStop);
+    }
+    @OnClick(R.id.soundlly_player_start)
+    protected void onSoundllyPlayerStart() {
+        try {
+            final Long beacon = Long.valueOf(mSoundllyPlayerBeacon.getText().toString());
+            this.textLoggingBold(R.string.soundlly_player_start);
+            if (beacon >= 1_000_000L) {
+                this.textLogging("Beacon ID(#%d) must be smaller than 1,000,000", beacon);
+                return;
+            }
+            if (mPlayerListener != null) {
+                SampleActivity.this.textLogging("Playing Beacon #%d with Existing Listener", beacon);
+                SoundllyPlayer.play(beacon);
+            } else SoundllyPlayer.init(this, SOUNDLLY_APP_KEY, mPlayerListener = new SoundllyPlayerResultListener() {
+
+                @Override
+                public void onInitialized() {
+                    SampleActivity.this.textLogging("Playing Beacon #%d in onInitialized()", beacon);
+                    SoundllyPlayer.play(beacon);
+                }
+
+                @Override
+                public void onPrepared(long beacon) {
+                    SampleActivity.this.textLogging("SoundllyPlayer Prepared with Beacon #%d", beacon);
+                    SoundllyPlayer.play(beacon);
+                }
+
+                @Override
+                public void onError(int errorCode) {
+                    switch (errorCode) {
+                        case SoundllyPlayerResultListener.ERROR_AUTHENTICATION:
+                            SampleActivity.this.textLogging("[Error] Authentication Failure : Invalid AppKey");
+                            break;
+                        case SoundllyPlayerResultListener.ERROR_INVALID_SOUNDLLY_ID:
+                            SampleActivity.this.textLogging("[Error] Invalid Soundlly Beacon ID");
+                            break;
+                        case SoundllyPlayerResultListener.ERROR_NETWORK:
+                            SampleActivity.this.textLogging("[Error] Network Error");
+                            break;
+                        case SoundllyPlayerResultListener.ERROR_PLAYBACK:
+                            SampleActivity.this.textLogging("[Error] Playback Error");
+                            break;
+                        default:
+                            SampleActivity.this.textLogging("[Error] Unexpected Code : %d", errorCode);
+                            break;
+                    }
+                }
+
+                @Override
+                public void onStateChanged(int stateCode) {
+                    switch (stateCode) {
+                        case SoundllyPlayerResultListener.PLAY_STARTED: // Playback Started
+                            SampleActivity.this.textLogging("[State] Sound Beacon Play Started");
+                            break;
+                        case SoundllyPlayerResultListener.PLAY_STOPPING: // .stop() is called
+                            SampleActivity.this.textLogging("[State] Sound Beacon Play Stopping");
+                            break;
+                        case SoundllyPlayerResultListener.PLAY_DONE: // Playback Finished
+                            SampleActivity.this.textLogging("[State] Sound Beacon Play Done");
+                            break;
+                        default:
+                            SampleActivity.this.textLogging("[State] Unexpected Code : %d", stateCode);
+                            break;
+                    }
+                }
+            });
+        } catch (NumberFormatException e) {
+            Timber.e(e);
+        }
+    }
+    @OnClick(R.id.soundlly_player_stop)
+    protected void onSoundllyPlayerStop() {
+        this.textLoggingBold(R.string.soundlly_player_stop);
+        SoundllyPlayer.stop();
+        this.textLogging("SoundllyPlayer Stopped");
     }
 
     /* Menu */
