@@ -1,12 +1,20 @@
 # BitsoundSDK-Android
 
-[![version](https://img.shields.io/badge/Bitsound-3.3.0-green.svg?style=flat-square)](#)
+[![version](https://img.shields.io/badge/Bitsound-3.3.1-green.svg?style=flat-square)](#)
 [![version](https://img.shields.io/badge/SoundllyPlayer-1.0.4-green.svg?style=flat-square)](#)
 [![dependency](https://img.shields.io/badge/support--annotations-26.0.1-red.svg?style=flat-square)](#)
 
 BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCentral** in near future! You can make your campaign with related appkey in [Portal](https://portal.soundl.ly/login.html#/). **Dependencies** are stated above with red [shield](http://shields.io/)
 
 ### Latest Release
+
+#### v3.3.1 (Updated at 2017/08/28)
+
+- Fix Rare Crashes happened on some particular devices
+
+---
+
+### Previous Release
 
 #### v3.3.0 (Updated at 2017/08/21)
 
@@ -37,10 +45,6 @@ Sample App
 
 - Update play-services to `11.0.4`
 - Include SoundllyPlayer Test Code in Sample Application
-
----
-
-### Previous Release
 
 #### v3.2.2 (Updated at 2017/07/12)
 
@@ -118,10 +122,10 @@ Changes
 
 ### Documents
 
-- [Introduction](https://docs.bitsound.io/v1.0/docs/introduction)
-- [Getting Started](https://docs.bitsound.io/v1.0/docs/getting-started)
-- [Android SDK Setup](https://docs.bitsound.io/v1.0/docs/android-sdk-setup)
-- [Android SDK API Reference](https://docs.bitsound.io/v1.0/docs/android-sdk)
+- [Introduction](https://docs.bitsound.io/docs/introduction)
+- [Getting Started](https://docs.bitsound.io/docs/getting-started)
+- [Android SDK Setup](https://docs.bitsound.io/docs/android-setup)
+- [Android SDK API Reference](https://docs.bitsound.io/docs/android)
 
 ### Supported Features
 
