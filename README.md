@@ -1,20 +1,27 @@
 # BitsoundSDK-Android
 
-[![version](https://img.shields.io/badge/Bitsound-3.3.1-green.svg?style=flat-square)](#)
+[![version](https://img.shields.io/badge/Bitsound-3.3.2-green.svg?style=flat-square)](#)
 [![version](https://img.shields.io/badge/SoundllyPlayer-1.0.4-green.svg?style=flat-square)](#)
-[![dependency](https://img.shields.io/badge/support--annotations-26.0.1-red.svg?style=flat-square)](#)
+[![dependency](https://img.shields.io/badge/support--annotations-26.1.0-red.svg?style=flat-square)](#)
 
 BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCentral** in near future! You can make your campaign with related appkey in [Portal](https://portal.soundl.ly/login.html#/). **Dependencies** are stated above with red [shield](http://shields.io/)
 
 ### Latest Release
 
-#### v3.3.1 (Updated at 2017/08/28)
+#### v3.3.2 (Updated at 2017/09/28)
 
-- Fix Rare Crashes happened on some particular devices
+Changes
+
+- Support Annotation Dependency from `26.0.1` to `26.1.0`
+- Fix Rare Crashes happened on some extreme cases
 
 ---
 
 ### Previous Release
+
+#### v3.3.1 (Updated at 2017/08/28)
+
+- Fix Rare Crashes happened on some particular devices
 
 #### v3.3.0 (Updated at 2017/08/21)
 
