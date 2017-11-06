@@ -1,6 +1,6 @@
 # BitsoundSDK-Android
 
-[![version](https://img.shields.io/badge/Bitsound-3.3.2-green.svg?style=flat-square)](#)
+[![version](https://img.shields.io/badge/Bitsound-3.4.1-green.svg?style=flat-square)](#)
 [![version](https://img.shields.io/badge/SoundllyPlayer-1.0.4-green.svg?style=flat-square)](#)
 [![dependency](https://img.shields.io/badge/support--annotations-26.1.0-red.svg?style=flat-square)](#)
 
@@ -8,122 +8,80 @@ BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCen
 
 ### Latest Release
 
-#### v3.3.2 (Updated at 2017/09/28)
+#### v3.4.1 (Updated at 2017/11/06)
 
-Changes
+**Changes**
 
-- Support Annotation Dependency from `26.0.1` to `26.1.0`
-- Fix Rare Crashes happened on some extreme cases
+- Reduce SDK Size over **20%**
+- Disable SDK if fails to load Native Library
+- Detection Parameter Updates for `S8` `S8+` `Note8` ...
+- Minor Exception Handlings
+- Drop SupportPassiveMic Feature is no longer supported
+- Drop Support for armeabi (armeabi-v5)
+
+**NEW APIs**
+
+- Bitsound.setUserID(Context, String)
+- Bitsound.getUserID(Context)
+- Bitsound.getUUID(Context)
+- BitsoundSmartOn.allowDetection(Context, boolean) : Skip Detection if false
+- BitsoundSmartOn.allowNightDetection(Context, boolean) : Detect on Daytime(08:00~21:00) if false
+- BitsoundSmartOn.allowBackgroundDetection(Context, boolean) : Detect only for foreground state if false
+
+**Deprecated APIs**
+
+- Bitsound.setUUID(Context, String)
+- Bitsound.getUUID(Context)
+
+**Obsolete APIs**
+
+- Bitsound.getTags(Context)
+- Bitsound.setTags(Context, JSONObject)
+- Bitsound.hasTag(Context, String)
+- Bitsound.removeTag(Context, String)
+- Bitsound.addTag(Context, String, boolean)
+- Bitsound.addTag(Context, String, double)
+- Bitsound.addTag(Context, String, int)
+- Bitsound.addTag(Context, String, long)
+- Bitsound.addTag(Context, String, Object)
+
+**Sample App**
+
+- Migration to AndroidStudio 3.0
+- Compile & Target SdkVersion `26` with BuilsTools `v26.0.2`
+- Android Support Library `v26.1.0`
+- PlayServices `v11.4.2`
 
 ---
 
-### Previous Release
+### Support Criteria
 
-#### v3.3.1 (Updated at 2017/08/28)
+|                   Type |                 Criteria                 |
+| ---------------------: | :--------------------------------------- |
+|                Version |                  v3.4.1                  |
+|            SDK Modules |      `receiver` `shaking` `smarton`      |
+|      compileSdkVersion |              26 (8.0, Oreo)              |
+| Maximum Guaranteed API |            25 (7.1.2, Nougat)            |
+| Minimum Guaranteed API |             19 (4.4 KitKat)              |
+|          minSdkVersion |             14 (4.0.3, ICS)              |
+|                 Locale |                    KR                    |
+|               Language |                    ko                    |
+|              Platforms |                SmartPhone                |
+|                   ABIs | `armeabi-v7a` `arm64-v8a` `x86` `x86_64` |
+|         Library Format |      .aar (Android Archive Library)      |
+|            Device List |               Stated Below               |
 
-- Fix Rare Crashes happened on some particular devices
+### Tested Devices
 
-#### v3.3.0 (Updated at 2017/08/21)
-
-Changes
-
-- Improved Alarm Stability
-- Improved Detection Accuracy
-- Supports `SAMSUNG Galaxy S8` `SAMSUNG Galaxy S8+` `LG G6` and more...
-- Following Features has been deprecated with `@Deprecated` Annotation :
-  - `Bitsound.getTags(Context)`
-  - `Bitsound.setTags(Context, JSONObject)`
-  - `Bitsound.hasTag(Context, String)`
-  - `Bitsound.removeTag(Context, String)`
-  - `Bitsound.addTag(Context, String, boolean)`
-  - `Bitsound.addTag(Context, String, double)`
-  - `Bitsound.addTag(Context, String, int)`
-  - `Bitsound.addTag(Context, String, long)`
-  - `Bitsound.addTag(Context, String, Object)`
-  - `Bitsound.setUUID(Context, String)`
-- `Bitsound.checkAndInit` is obsolete since `v3.3.0`
-
-BugFix
-
-  - Resolve Potential Exception in Threading
-  - Resolve Potential NPE
-
-Sample App
-
-- Update play-services to `11.0.4`
-- Include SoundllyPlayer Test Code in Sample Application
-
-#### v3.2.2 (Updated at 2017/07/12)
-
-Changes
-
-- **More Controllable AlarmScheduler** with `offset` and `poolsize`
-
-BugFix
-
-- Fixed `NullPointException` rarely occured in some Lollipop Devices
-
-Sample App
-
-- Fixed Default BroadcastReceiver `android:name`
-- Update buildToolsVersion to `25.0.3`
-- Update play-services to `11.0.2`
-
-#### v3.2.0 (Updated at 2017/06/12)
-
-Changes
-
-- Decreased Logging Network Usage **down to 10%**
-- **Initialization Fails for Network Error** without Force Trigger Parameter
-- Always turn on PassiveMic Feature **(will be slowly deprecated)**
-- Use Explicit Intent to prepare **Android O**
-
-#### v3.1.2 (Updated at 2017/05/17)
-
-BugFix
-
-- Fixed Potential `NullPointException`
-
-#### v3.1.1 (Updated at 2017/05/17)
-
-BugFix
-
-- Fixed AlarmPoolSize was decreased rarely on **SAMSUNG Devices**
-- Fixed AlarmPoolSize was operating in one less number
-- Fixed AlarmScheduler's rare Exceptions with synchronization
-- Fixed Dispatching statistics delivered in proper time
-
-#### v3.1.0 (Updated at 2017/05/08)
-
-Changes
-
-- Dependency Reduction (removed following dependencies)  
-  [![dependency](https://img.shields.io/badge/appcompat--v7-25.1.0-red.svg?style=flat-square)](#)
-  [![dependency](https://img.shields.io/badge/play--services--base-10.0.1-red.svg?style=flat-square)](#)
-  [![dependency](https://img.shields.io/badge/play--services--ads-10.0.1-red.svg?style=flat-square)](#)
-- Stable Alarm Scheduling
-- Stable Network Access including less Data Usage
-- Stable Log for Statistics
-- Stable Audio Recording free from AudioEffect native crash
-- Support Log Tagging API instead of repeated customlog calls
-- Support FrameTypeFour Sound Beacon
-- Support BitsoundContents from Bytes in BitsoundSmartOn Receiver
-- Support Stringify class for code values in string
-
-#### v3.0.11 (Updated at 2017/03/28)
-
-- Core Parameter Update for FrameTypeZero Signal
-
-#### v3.0.10 (Updated at 2017/03/20)
-
-- Synchronized **Local ScheduleFile Version** against Server
-- Synchronized **Initialization Process**
-
-
-#### v3.0.9 (Updated at 2017/03/16)
-
-- **Bitsound.init** verification runs **Every 10 minutes**
-- Updates Schedule on **Every 10 minutes**
+|           Series | Models                                   |
+| ---------------: | :--------------------------------------- |
+| Samsung Flagship | `Note8` `S8+` `S8` `Note FE` `S7Edge` `S7` `S6Edge` `S6` `Note5` `S5` `Note4Edge` `Note4` `S4 LTE-A` `S4` `Note3` |
+| Samsung MidRange | `A8` `A7` `A5` `A3` `J7` `J5`            |
+|      Samsung ETC | `On7(2016)` `GrandMAX` `Grand2`          |
+|      LG Flagship | `V30` `V20` `V10` `G6` `G5` `G4` `G3` `G2` `G Stylo` `GPro` |
+|      LG MidRange | `X Power` `X Screen` `K10` `Class` `Optimus LTE` |
+|           Google | `Nexus 6` `Nexus 5X`                     |
+|              ETC | `VEGA Secret UP` `VEGA LTE-A` `VEGA Iron` `VEGA NO.6` `VEGA Racer` `SKY IM-100` |
 
 ---
 
@@ -133,16 +91,3 @@ Changes
 - [Getting Started](https://docs.bitsound.io/docs/getting-started)
 - [Android SDK Setup](https://docs.bitsound.io/docs/android-setup)
 - [Android SDK API Reference](https://docs.bitsound.io/docs/android)
-
-### Supported Features
-
-**Type**|**Criteria**
-:-----:|:-----:
-Devices|Support Device List (Link will be updated)
-Locale|KR (as default)
-Language|ko (as default)
-minSdkVersion|14 (4.0.3, ICS)
-Module Coverage|receiver / shaking / smarton
-Library Format|.aar (Android Archive Library)
-CPU Architecture|arm64-v8a / armeabi / armeabi-v7a / x86 / x86\_64
-Platforms|Phone and Tablet / TV

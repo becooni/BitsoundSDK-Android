@@ -42,9 +42,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-ads:11.4.2'
 
     /* Bitsound */
-    implementation (name: 'io.bitsound.receiver-v3.3.2', ext:'aar')
-    implementation (name: 'io.bitsound.shaking-v3.3.2', ext:'aar')
-    implementation (name: 'io.bitsound.smarton-v3.3.2', ext:'aar')
+    implementation (name: 'io.bitsound.receiver-v3.4.1', ext:'aar')
+    implementation (name: 'io.bitsound.shaking-v3.4.1', ext:'aar')
+    implementation (name: 'io.bitsound.smarton-v3.4.1', ext:'aar')
 
     /* Soundlly Player */
     implementation (name: 'SoundllyPlayerSDK-1.0.4-release', ext:'aar')
