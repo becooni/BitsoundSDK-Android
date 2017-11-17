@@ -1,75 +1,40 @@
 # BitsoundSDK-Android
 
-[![version](https://img.shields.io/badge/Bitsound-3.4.1-green.svg?style=flat-square)](#)
+[![version](https://img.shields.io/badge/Bitsound-3.5.1-green.svg?style=flat-square)](#)
 [![version](https://img.shields.io/badge/SoundllyPlayer-1.0.4-green.svg?style=flat-square)](#)
 [![dependency](https://img.shields.io/badge/support--annotations-26.1.0-red.svg?style=flat-square)](#)
 
-BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCentral** in near future! You can make your campaign with related appkey in [Portal](https://portal.soundl.ly/login.html#/). **Dependencies** are stated above with red [shield](http://shields.io/)
+BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCentral** in near future! You can make your own campaign with corresponding appkey from [Portal](https://portal.soundl.ly/login.html#/). **Dependencies** are stated above with red [shield](http://shields.io/)
 
 ### Latest Release
 
-#### v3.4.1 (Updated at 2017/11/06)
+#### v3.5.1 (Updated at 2017/11/17)
 
 **Changes**
 
-- Reduce SDK Size over **20%**
-- Disable SDK if fails to load Native Library
-- Detection Parameter Updates for `S8` `S8+` `Note8` ...
-- Minor Exception Handlings
-- Drop SupportPassiveMic Feature is no longer supported
-- Drop Support for armeabi (armeabi-v5)
-
-**NEW APIs**
-
-- Bitsound.setUserID(Context, String)
-- Bitsound.getUserID(Context)
-- Bitsound.getUUID(Context)
-- BitsoundSmartOn.allowDetection(Context, boolean) : Skip Detection if false
-- BitsoundSmartOn.allowNightDetection(Context, boolean) : Detect on Daytime(08:00~21:00) if false
-- BitsoundSmartOn.allowBackgroundDetection(Context, boolean) : Detect only for foreground state if false
-
-**Deprecated APIs**
-
-- Bitsound.setUUID(Context, String)
-- Bitsound.getUUID(Context)
-
-**Obsolete APIs**
-
-- Bitsound.getTags(Context)
-- Bitsound.setTags(Context, JSONObject)
-- Bitsound.hasTag(Context, String)
-- Bitsound.removeTag(Context, String)
-- Bitsound.addTag(Context, String, boolean)
-- Bitsound.addTag(Context, String, double)
-- Bitsound.addTag(Context, String, int)
-- Bitsound.addTag(Context, String, long)
-- Bitsound.addTag(Context, String, Object)
-
-**Sample App**
-
-- Migration to AndroidStudio 3.0
-- Compile & Target SdkVersion `26` with BuilsTools `v26.0.2`
-- Android Support Library `v26.1.0`
-- PlayServices `v11.4.2`
+- Recording Characteristics Optimization for New Devices
+- Background Behavior Improvements for SAMSUNG Devices
+- Fix Rare Exceptions caused by Android Lifecycle & Package Manager
+- Handle Exceptions from Android Oreo
 
 ---
 
 ### Support Criteria
 
-|                   Type |                 Criteria                 |
+|                   Type | Criteria                                 |
 | ---------------------: | :--------------------------------------- |
-|                Version |                  v3.4.1                  |
-|            SDK Modules |      `receiver` `shaking` `smarton`      |
-|      compileSdkVersion |              26 (8.0, Oreo)              |
-| Maximum Guaranteed API |            25 (7.1.2, Nougat)            |
-| Minimum Guaranteed API |             19 (4.4 KitKat)              |
-|          minSdkVersion |             14 (4.0.3, ICS)              |
-|                 Locale |                    KR                    |
-|               Language |                    ko                    |
-|              Platforms |                SmartPhone                |
+|                Version | v3.5.1                                   |
+|            SDK Modules | `receiver` `shaking` `smarton`           |
+|      compileSdkVersion | 26 (8.0, Oreo)                           |
+| Maximum Guaranteed API | 25 (7.1.2, Nougat)                       |
+| Minimum Guaranteed API | 19 (4.4 KitKat)                          |
+|          minSdkVersion | 14 (4.0.3, ICS)                          |
+|                 Locale | KR                                       |
+|               Language | ko                                       |
+|              Platforms | SmartPhone                               |
 |                   ABIs | `armeabi-v7a` `arm64-v8a` `x86` `x86_64` |
-|         Library Format |      .aar (Android Archive Library)      |
-|            Device List |               Stated Below               |
+|         Library Format | .aar (Android Archive Library)           |
+|            Device List | Stated Below                             |
 
 ### Tested Devices
 
