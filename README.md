@@ -1,6 +1,6 @@
 # BitsoundSDK-Android
 
-[![version](https://img.shields.io/badge/Bitsound-3.5.1-green.svg?style=flat-square)](#)
+[![version](https://img.shields.io/badge/Bitsound-3.5.4-green.svg?style=flat-square)](#)
 [![version](https://img.shields.io/badge/SoundllyPlayer-1.0.4-green.svg?style=flat-square)](#)
 [![dependency](https://img.shields.io/badge/support--annotations-26.1.0-red.svg?style=flat-square)](#)
 
@@ -8,14 +8,15 @@ BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCen
 
 ### Latest Release
 
-#### v3.5.1 (Updated at 2017/11/17)
+#### v3.5.4 (Updated at 2017/11/27)
 
 **Changes**
 
-- Recording Characteristics Optimization for New Devices
-- Background Behavior Improvements for SAMSUNG Devices
-- Fix Rare Exceptions caused by Android Lifecycle & Package Manager
-- Handle Exceptions from Android Oreo
+- Fix ProGuard Issue for NDK Build
+- Handle Reported Exceptions
+
+**Sample Project**
+- AndroidStudio 3.0.1
 
 ---
 
@@ -23,7 +24,7 @@ BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCen
 
 |                   Type | Criteria                                 |
 | ---------------------: | :--------------------------------------- |
-|                Version | v3.5.1                                   |
+|                Version | v3.5.4                                   |
 |            SDK Modules | `receiver` `shaking` `smarton`           |
 |      compileSdkVersion | 26 (8.0, Oreo)                           |
 | Maximum Guaranteed API | 25 (7.1.2, Nougat)                       |
