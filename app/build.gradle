@@ -1,16 +1,19 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion appCompileSdkVersion
+    buildToolsVersion appBuildToolsVersion
+
     defaultConfig {
         applicationId "io.bitsound.android.sample"
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion appMinSdkVersion
+        targetSdkVersion appTargetSdkVersion
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,35 +31,37 @@ repositories {
 dependencies {
     /* Android Essentials */
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation("com.android.support.test.espresso:espresso-core:2.2.2", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testImplementation 'junit:junit:4.12'
+    testImplementation "junit:junit:$vJUnit"
 
     /* Android Support */
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation "com.android.support:appcompat-v7:$vSupportLibrary"
+    implementation "com.android.support:support-v4:$vSupportLibrary"
+    implementation "com.android.support:support-media-compat:$vSupportLibrary"
+    implementation "com.android.support:recyclerview-v7:$vSupportLibrary"
 
     /* Google */
-    implementation 'com.google.android.gms:play-services-base:11.4.2'
-    implementation 'com.google.android.gms:play-services-ads:11.4.2'
+    implementation "com.google.android.gms:play-services-base:$vPlayServices"
+    implementation "com.google.android.gms:play-services-ads:$vPlayServices"
 
     /* Bitsound */
-    implementation (name: 'io.bitsound.receiver-v3.5.4', ext:'aar')
-    implementation (name: 'io.bitsound.shaking-v3.5.4', ext:'aar')
-    implementation (name: 'io.bitsound.smarton-v3.5.4', ext:'aar')
+    implementation (name: "io.bitsound.receiver-v$vBitsound", ext:'aar')
+    implementation (name: "io.bitsound.shaking-v$vBitsound", ext:'aar')
+    implementation (name: "io.bitsound.smarton-v$vBitsound", ext:'aar')
 
     /* Soundlly Player */
-    implementation (name: 'SoundllyPlayerSDK-1.0.4-release', ext:'aar')
+    implementation (name: "com.soundlly.soundllyplayer-$vSoundlly", ext:'aar')
 
     /* Utility */
-    implementation 'com.jakewharton.timber:timber:4.5.0'
+    implementation "com.jakewharton.timber:timber:4.6.0"
 
     /* ButterKnife */
-    implementation 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    implementation "com.jakewharton:butterknife:8.8.1"
+    annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
 
     /* Image */
-    implementation 'com.squareup.picasso:picasso:2.5.2'
-    implementation 'jp.wasabeef:picasso-transformations:2.1.0'
+    implementation "com.squareup.picasso:picasso:2.5.2"
+    implementation "jp.wasabeef:picasso-transformations:2.1.0"
 }

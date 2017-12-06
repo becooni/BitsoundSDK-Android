@@ -1,41 +1,47 @@
 # BitsoundSDK-Android
 
-[![version](https://img.shields.io/badge/Bitsound-3.5.4-green.svg?style=flat-square)](#)
+[![version](https://img.shields.io/badge/Bitsound-3.5.5-green.svg?style=flat-square)](#)
 [![version](https://img.shields.io/badge/SoundllyPlayer-1.0.4-green.svg?style=flat-square)](#)
-[![dependency](https://img.shields.io/badge/support--annotations-26.1.0-red.svg?style=flat-square)](#)
+[![dependency](https://img.shields.io/badge/support--annotations-27.0.2-red.svg?style=flat-square)](#)
 
 BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCentral** in near future! You can make your own campaign with corresponding appkey from [Portal](https://portal.soundl.ly/login.html#/). **Dependencies** are stated above with red [shield](http://shields.io/)
 
 ### Latest Release
 
-#### v3.5.4 (Updated at 2017/11/27)
+#### v3.5.5 (Updated at 2017/12/04)
 
 **Changes**
 
-- Fix ProGuard Issue for NDK Build
-- Handle Reported Exceptions
+- ADID is enabled by default. Clients can opt-out if necessary
+- Remove Force Initialization Parameter from `Bitsound.init` API
+- Shrink SDK Size by 35% by dropping `x86` `x86_64` ABI in production build
+- Resolve Reported Crashes
 
 **Sample Project**
-- AndroidStudio 3.0.1
+- targetSdkVersion `27`
+- compileSdkVersioin `27`
+- buildToolsVersion `27.0.1`
+- Android Support Library `v27.0.2`
+- Play Services Library `v11.6.2`
 
 ---
 
 ### Support Criteria
 
-|                   Type | Criteria                                 |
-| ---------------------: | :--------------------------------------- |
-|                Version | v3.5.4                                   |
-|            SDK Modules | `receiver` `shaking` `smarton`           |
-|      compileSdkVersion | 26 (8.0, Oreo)                           |
-| Maximum Guaranteed API | 25 (7.1.2, Nougat)                       |
-| Minimum Guaranteed API | 19 (4.4 KitKat)                          |
-|          minSdkVersion | 14 (4.0.3, ICS)                          |
-|                 Locale | KR                                       |
-|               Language | ko                                       |
-|              Platforms | SmartPhone                               |
-|                   ABIs | `armeabi-v7a` `arm64-v8a` `x86` `x86_64` |
-|         Library Format | .aar (Android Archive Library)           |
-|            Device List | Stated Below                             |
+|                   Type | Criteria                       |
+| ---------------------: | :----------------------------- |
+|                Version | v3.5.5                         |
+|            SDK Modules | `receiver` `shaking` `smarton` |
+|      compileSdkVersion | 27 (8.1, Oreo)                 |
+| Maximum Guaranteed API | 25 (7.1.2, Nougat)             |
+| Minimum Guaranteed API | 19 (4.4 KitKat)                |
+|          minSdkVersion | 14 (4.0.3, ICS)                |
+|                 Locale | KR                             |
+|               Language | ko                             |
+|              Platforms | SmartPhone                     |
+|                   ABIs | `armeabi-v7a` `arm64-v8a`      |
+|         Library Format | .aar (Android Archive Library) |
+|            Device List | Stated Below                   |
 
 ### Tested Devices
 
