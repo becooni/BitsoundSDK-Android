@@ -1,6 +1,6 @@
-# BitsoundSDK-Android
+# Bitsound SDK for Android
 
-[![version](https://img.shields.io/badge/Bitsound-3.5.5-green.svg?style=flat-square)](#)
+[![version](https://img.shields.io/badge/Bitsound-3.6.0-green.svg?style=flat-square)](#)
 [![version](https://img.shields.io/badge/SoundllyPlayer-1.0.4-green.svg?style=flat-square)](#)
 [![dependency](https://img.shields.io/badge/support--annotations-27.0.2-red.svg?style=flat-square)](#)
 
@@ -8,21 +8,12 @@ BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCen
 
 ### Latest Release
 
-#### v3.5.5 (Updated at 2017/12/04)
+#### v3.6.0 (Updated at 2018/01/03)
 
 **Changes**
 
-- ADID is enabled by default. Clients can opt-out if necessary
-- Remove Force Initialization Parameter from `Bitsound.init` API
-- Shrink SDK Size by 35% by dropping `x86` `x86_64` ABI in production build
-- Resolve Reported Crashes
-
-**Sample Project**
-- targetSdkVersion `27`
-- compileSdkVersioin `27`
-- buildToolsVersion `27.0.1`
-- Android Support Library `v27.0.2`
-- Play Services Library `v11.6.2`
+- Pause for a while if authentication fails
+- Fix reported issues including crashes
 
 ---
 
@@ -30,8 +21,9 @@ BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCen
 
 |                   Type | Criteria                       |
 | ---------------------: | :----------------------------- |
-|                Version | v3.5.5                         |
+|                Version | v3.6.0                         |
 |            SDK Modules | `receiver` `shaking` `smarton` |
+|       targetSdkVersion | 27 (8.1, Oreo)                 |
 |      compileSdkVersion | 27 (8.1, Oreo)                 |
 | Maximum Guaranteed API | 25 (7.1.2, Nougat)             |
 | Minimum Guaranteed API | 19 (4.4 KitKat)                |
