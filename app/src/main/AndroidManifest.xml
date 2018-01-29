@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.bitsound.android.sample">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
@@ -21,19 +21,13 @@
             </intent-filter>
         </activity>
 
-        <!-- BitsoundSmartOn throws action -->
-        <receiver android:name=".receivers.BitsoundSmartOnReceiver"
-                  android:exported="false">
-            <intent-filter>
-                <!-- Action must be your.application.package.ACTION_BITSOUND_SMARTON -->
-                <action android:name="io.bitsound.android.sample.ACTION_BITSOUND_SMARTON" />
-            </intent-filter>
-        </receiver>
+        <!-- Bitsound Contents Receiver throws action -->
+        <receiver android:name=".SampleBitsoundContentsReceiver"/>
 
         <!-- Bitsound APP KEY -->
         <meta-data
             android:name="io.bitsound.AppKey"
-            android:value="75d97ae5-0e2d-4322-82cd-9770d129cd04" />
+            android:value="75d97ae5-0e2d-4322-82cd-9770d129cd04"/>
     </application>
 
 </manifest>

@@ -1,25 +1,20 @@
 <resources>
     <string name="app_name">BitsoundSample</string>
 
-    <!-- Bitsound -->
-    <string name="bitsound.label">Bitsound</string>
-    <string name="bitsound.init">Bitsound::init</string>
-    <string name="bitsound.release">Bitsound::release</string>
+    <!-- Bitsound Shake -->
+    <string name="bitsound.shake.label">Bitsound Shake</string>
+    <string name="bitsound.shake.enable">Bitsound.enableShake</string>
+    <string name="bitsound.shake.disable">Bitsound.disableShake</string>
 
-    <!-- BitsoundReceiver -->
-    <string name="bitsound.receiver.label">BitsoundReceiver</string>
-    <string name="bitsound.receiver.start">BitsoundReceiver::startDetection</string>
-    <string name="bitsound.receiver.stop">BitsoundReceiver::stopDetection</string>
+    <!-- Bitsound Single Detection -->
+    <string name="bitsound.detection.single.label">Bitsound SingleDetection</string>
+    <string name="bitsound.detection.single.start">Bitsound.startSingleDetection</string>
+    <string name="bitsound.detection.single.stop">Bitsound.stopSingleDetection</string>
 
-    <!-- BitsoundShaking -->
-    <string name="bitsound.shaking.label">BitsoundShaking</string>
-    <string name="bitsound.shaking.enable">BitsoundShaking::enable</string>
-    <string name="bitsound.shaking.disable">BitsoundShaking::disable</string>
-
-    <!-- BitsoundSmartOn -->
-    <string name="bitsound.smarton.label">BitsoundSmartOn</string>
-    <string name="bitsound.smarton.start">BitsoundSmartOn::start</string>
-    <string name="bitsound.smarton.stop">BitsoundSmartOn::stop</string>
+    <!-- Bitsound Periodic Detection -->
+    <string name="bitsound.detection.periodic.label">Bitsound PeriodicDetection</string>
+    <string name="bitsound.detection.periodic.start">Bitsound.startPeriodicDetection</string>
+    <string name="bitsound.detection.periodic.stop">Bitsound.stopPeriodicDetection</string>
 
     <!-- Soundlly Player -->
     <string name="soundlly.player.label">SoundllyPlayer</string>
@@ -30,11 +25,6 @@
     <!-- Menu -->
     <string name="menu.clear_text_log">Clear Text Log</string>
     <string name="menu.mic_permission">Request Mic Permission</string>
-
-    <!-- Toolbar -->
-    <string name="toolbar.bitsound.not_initialized">Not Initialized</string>
-    <string name="toolbar.bitsound.initialized">Initialized</string>
-    <string name="toolbar.bitsound.released">Released</string>
 
     <!-- Permission -->
     <string name="permission.mic.granted">Mic Permission Granted</string>

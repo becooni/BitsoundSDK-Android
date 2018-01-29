@@ -47,9 +47,7 @@ dependencies {
     implementation "com.google.android.gms:play-services-ads:$vPlayServices"
 
     /* Bitsound */
-    implementation (name: "io.bitsound.receiver-v$vBitsound", ext:'aar')
-    implementation (name: "io.bitsound.shaking-v$vBitsound", ext:'aar')
-    implementation (name: "io.bitsound.smarton-v$vBitsound", ext:'aar')
+    implementation (name: "io.bitsound-$vBitsound", ext:'aar')
 
     /* Soundlly Player */
     implementation (name: "com.soundlly.soundllyplayer-$vSoundlly", ext:'aar')

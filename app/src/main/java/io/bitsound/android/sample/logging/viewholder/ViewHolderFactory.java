@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 
 import java.util.Locale;
 
-import io.bitsound.android.sample.App;
 import io.bitsound.android.sample.R;
+import io.bitsound.android.sample.App;
 import io.bitsound.android.sample.logging.RecyclerViewItemClickListener;
 
 

@@ -2,8 +2,8 @@ package io.bitsound.android.sample.logging;
 
 import android.graphics.Typeface;
 
-import io.bitsound.android.sample.App;
 import io.bitsound.android.sample.R;
+import io.bitsound.android.sample.App;
 import io.bitsound.android.sample.logging.viewholder.ViewHolderFactory;
 
 
