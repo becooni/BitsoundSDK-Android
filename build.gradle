@@ -12,7 +12,7 @@ buildscript {
         vJUnit = '4.12'
         vSupportLibrary = '27.0.2'
         vPlayServices = '11.8.0'
-        vBitsound = 'v4.1.0'
+        vBitsound = 'v4.1.1'
         vSoundlly = '1.0.4'
     }
     repositories {

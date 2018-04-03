@@ -1,6 +1,6 @@
 # Bitsound SDK for Android
 
-[![version](https://img.shields.io/badge/Bitsound-4.1.0-green.svg?style=flat-square)](#)
+[![version](https://img.shields.io/badge/Bitsound-4.1.1-green.svg?style=flat-square)](#)
 [![version](https://img.shields.io/badge/SoundllyPlayer-1.0.4-green.svg?style=flat-square)](#)
 [![dependency](https://img.shields.io/badge/support--annotations-27.0.2-red.svg?style=flat-square)](#)
 
@@ -8,21 +8,15 @@ BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCen
 
 ### Latest Release
 
-#### v4.1.0 (Updated at 2018/03/12)
+#### v4.1.1 (Updated at 2018/04/03)
 
 **Changes**
 
-- Use `HTTPS` for all network connection
-- Provide SDK for projects with targetSdkVersion under 26 with a suffix `-nougat`
-- Support service blocking against brand, model, and OS version
-- Bugfix reported crashes including `SharedPreferences` type casting issue
+- Resolve Crashes by `NegativeArraySizeException`
 
 **변경점**
 
-- 모든 네트워크 통신 방식을 `HTTPS`로 변경
-- targetSdkVersion 오레오 미만인 프로젝트를 위해, `-nougat` 접미어가 포함된 SDK 제공
-- 브랜드, 모델, OS버전 대상으로의 서비스 블로킹 지원
-- `SharedPreferences` 타입 캐스팅 이슈를 포함하여 보고된 크래시 수정
+- `NegativeArraySizeException` 로 인해 발생 가능한 크래시 수정
 
 ---
 
@@ -30,7 +24,7 @@ BitsoundAndroidSDK Archive. We will distribute through **jCenter** or **mavenCen
 
 |                   Type | Criteria                       |
 | ---------------------: | :----------------------------- |
-|                Version | v4.1.0                         |
+|                Version | v4.1.1                         |
 |            SDK Modules | `bitsound`                     |
 |       targetSdkVersion | 26 (8.0, Oreo)                 |
 |      compileSdkVersion | 27 (8.1, Oreo)                 |
