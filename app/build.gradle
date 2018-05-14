@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion appCompileSdkVersion
     buildToolsVersion appBuildToolsVersion
+    compileSdkVersion appCompileSdkVersion
 
     defaultConfig {
         applicationId "io.bitsound.android.sample"

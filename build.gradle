@@ -6,13 +6,13 @@ buildscript {
         appMinSdkVersion = 15
         appTargetSdkVersion = 27
         appCompileSdkVersion = 27
-        appBuildToolsVersion = '27.0.1'
+        appBuildToolsVersion = '27.0.3'
 
         /* External Dependencies */
         vJUnit = '4.12'
-        vSupportLibrary = '27.0.2'
+        vSupportLibrary = '27.1.1'
         vPlayServices = '11.8.0'
-        vBitsound = 'v4.1.1'
+        vBitsound = 'v4.2.1'
         vSoundlly = '1.0.4'
     }
     repositories {
@@ -20,7 +20,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.2'
     }
 }
 
